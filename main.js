@@ -1,28 +1,33 @@
 //define variables
-let amount = prompt("How much amount you want to convert?")
-let currencyRatio = 23161.39
+const currencyRatio = 23161.39
+let amount = document.getElementById("amountInput")
+let from = document.getElementById("fromList")
+let to = document.getElementById("toList")
+let result = document.getElementById("resultArea")
+let convertedAmount = 0
+let formatAmount = ""
 
-//IF-ELSE condition
-if(isNaN(amount)){
-  console.log("Input a valid number please!!")
-}else{
-  let from = prompt("Which currency do you have?")
-  let to = prompt("Which currency do you want?")
-  if(from === "usd" && to === "vnd"){
-    console.log(from," to ", to, "is ", formatCurrency(to, usdToVnd()))
-  }else if (from === "vnd" && to === "usd"){
-    console.log(from," to ",to, "is ", formatCurrency(to, vndToUsd()))
+function convert(){
+  //IF-ELSE condition
+  if(from.value === "VND" && to.value === "USD"){
+    convertedAmount = vndToUsd()
+    formatAmount = formatCurrency(to.value, convertedAmount)
+  }else if(from.value ==="USD" && to.value === "VND"){
+    convertedAmount = usdToVnd()
+    formatAmount = formatCurrency(to.value, convertedAmount)
   }else{
-    console.log("Invalid currency. Please input again !!!")
+    alert("Invalid currency. Please input again !!!")
+    return;
   }
+  result.innerHTML = `${formatCurrency(from.value, amount.value)} is ${formatAmount}`
 }
 
 //Function
 function usdToVnd(){
-  return result = amount * currencyRatio
+  return amount.value * currencyRatio
 }
 function vndToUsd(){
-  return result = amount / currencyRatio    
+  return amount.value / currencyRatio    
 }
 function formatCurrency(type, value) {
   const formatter = new Intl.NumberFormat(type, {
@@ -31,3 +36,4 @@ function formatCurrency(type, value) {
   });
   return formatter.format(value);
 }
+  
