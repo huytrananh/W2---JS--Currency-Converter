@@ -4,33 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Converter</title>
-    <h1>Currency converter</h1>
-    <input type="number" id="amountInput" />
-
-    <label for="cars">From:</label>
-    <select id="fromList">
-        <option value="USD">USD</option>
-        <option value="VND">VND</option>
-        <option value="AUD">AUD</option>
-        <option value="KRW">KRW</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-    </select>
-    
-    <label for="cars">To:</label>
-    <select id="toList">
-        <option value="USD">USD</option>
-        <option value="VND">VND</option>
-        <option value="AUD">AUD</option>
-        <option value="KRW">KRW</option>
-        <option value="EUR">EUR</option>
-        <option value="GBP">GBP</option>
-    </select>
-    <button id="convertButton" onclick="convert()">Convert!</button>
-    <div id="resultArea">Result will be here</div>
-    <script src="main.js"></script>
+    <link
+        rel="stylesheet"
+        crossorigin="anonymous"
+        href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header style="background-color: rgb(111, 157, 243); color: white">
+        <div class="container">
+        <h1>Currency converter</h1>
+        <form class="form-header">
+            <div class="row container">
+                <div class="form-group col-4">
+                    <label for="">Amount</label>
+                    <input type="number" id="amountInput" class="boxes" placeholder="Please input a VALID amount"/>
+                </div>
+                <div class="form-group col-3">
+                    <label for="">From:</label>
+                    <select id="fromList" class="boxes">
+                        <option value="--">--</option>
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group col-1 button">
+                    <button id="swapButton" onclick="swapCurrency()">
+                        <i class="fas fa-exchange-alt fa-2x" ></i>
+                    </button>
+                </div> -->
+
+                <div class="form-group col-1 button">
+                        <i class="fas fa-exchange-alt fa-2x" onclick="swapCurrency()" ></i>
+                    </button>
+                </div>
+
+                <div class="form-group col-3">
+                    <label for="">To:</label>
+                    <select id="toList" class="boxes">
+                        <option value="--">--</option>
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                        <option value="AUD">AUD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+                <div class="form-group col-1 button">
+                        <i class="fas fa-chevron-right fa-2x" onclick="convert()"></i>
+                </div>
+                <div class="form-group col" style="text-align: center;">
+                    <div id="resultArea">Result will be here</div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</header>
+    <section>
+
+    </section>
     
+
+
+    <script src="main.js"></script>
 </body>
 </html>
